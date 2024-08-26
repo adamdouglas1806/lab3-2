@@ -34,7 +34,7 @@ public class RecursiveSquares extends Frame {
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		// recursive pattern of order n
-		int n = 4;
+		int n = 2;
 		drawSquare(g2, 100, 100, 100, n);
 	}
 
