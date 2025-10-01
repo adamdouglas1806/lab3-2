@@ -18,7 +18,11 @@ public class RecursiveSquares extends Frame {
 	}
 
 	private void drawSquare(Graphics2D g, int xPosition, int yPosition, int length, int n) {
-		/* Check to see if the base case has been reached */
+		
+		if (n==0) {
+			return;
+		}
+		//The if statement is the base case that ensures there will not be infinite recursion.
 		
 		/* Otherwise, the recursive case
 		 * 
@@ -28,6 +32,19 @@ public class RecursiveSquares extends Frame {
 		 *      
 		 * Step 2: make recursive calls to draw 4 smaller squares next time.
 		 * */
+		
+		g.draw(new Rectangle2D.Double(xPosition, yPosition, length, length));
+		//g.draw(...) will draw the base square.
+		
+		
+		drawSquare(g, xPosition-(length/4), yPosition-(length/4), length/2, n-1);
+		//This line of code will draw the smaller square at the top left corner of the larger square.
+		drawSquare(g, xPosition+(3*length/4), yPosition-(length/4), length/2, n-1);
+		//This line of code will draw the smaller square at the top right corner of the larger square.
+		drawSquare(g, xPosition-(length/4), yPosition+(3*length/4), length/2, n-1);
+		//This line of code will draw the smaller square at the bottom left corner of the larger square.
+		drawSquare(g, xPosition+(3*length/4), yPosition+(3*length/4), length/2, n-1);
+		//This line of code will draw the smaller square at the bottom right corner of the larger square.
 	}
 	
 	@Override

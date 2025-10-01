@@ -27,7 +27,7 @@ public class Recursion {
 		if (n==0) {
 			return 0;
 		}
-		//THis if statement checks if n=0, if so then it will return 0 to prevent infinite recursion.
+		//This if statement checks if n=0, if so then it will return 0 to prevent infinite recursion.
 		
 		if (m>0 && n>0) {
 			//Checks if both inputs are positive.
